@@ -1,15 +1,11 @@
-import 'dart:convert';
-import 'package:http/http.dart' as http;
-import 'package:store_app/models/products.dart';
 
+import 'package:store_app/helper/api.dart';
+import 'package:store_app/models/products.dart';
 
 class GetAllProducts {
   Future<List<ProductsModels>> AllProducts() async {
-    http.Response response =
-        await http.get(Uri.parse('https://fakestoreapi.com/products'));
-
-    List<dynamic> data = jsonDecode(response.body);
-
+    List<dynamic> data =
+        await Api().get(url: 'https://fakestoreapi.com/products');
     List<ProductsModels> productsList = [];
     for (int i = 0; i < data.length; i++) {
       productsList.add(

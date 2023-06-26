@@ -128,7 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
             'Accept': 'application/json',
             'Content-Type': 'https://fakestoreapi.com/products'
           });
-          print(response.body);
+     
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),

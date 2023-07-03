@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
         title: Text(
-          'New Tren',
+          'New Trend',
           style: TextStyle(
             color: Colors.black,
           ),
@@ -44,7 +44,7 @@ class HomePage extends StatelessWidget {
                       crossAxisCount: 2,
                       childAspectRatio: 1.4,
                       crossAxisSpacing: 10,
-                      mainAxisSpacing: 50,
+                      mainAxisSpacing: 100,
                     ),
                     itemBuilder: (context, index) {
                       return CustomCard(

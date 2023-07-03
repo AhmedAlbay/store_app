@@ -1,16 +1,18 @@
 class ProductsModels {
-  final int id;
+  final dynamic id;
   final String title;
   final dynamic price;
   final String description;
   final String image;
-  final RatingModel rating;
+  final String category;
+  final RatingModel? rating;
   ProductsModels(
       {required this.id,
       required this.description,
       required this.image,
       required this.price,
       required this.title,
+      required this.category,
       required this.rating});
   factory ProductsModels.fromJson(jsonData) {
     return ProductsModels(
@@ -19,7 +21,10 @@ class ProductsModels {
         image: jsonData['image'],
         price: jsonData['price'],
         title: jsonData['title'],
-        rating: RatingModel.fromJson(jsonData['rating']));
+        category: jsonData['category'],
+        rating: jsonData['rating'] == null
+            ? null
+            : RatingModel.fromJson(jsonData['rating']));
   }
 }
 

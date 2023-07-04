@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:store_app/models/products.dart';
 import 'package:store_app/screens/update_page.dart';
 
+// ignore: must_be_immutable
 class CustomCard extends StatelessWidget {
-  CustomCard({required this.product});
+  CustomCard({super.key, required this.product});
 
   ProductsModels product;
 
@@ -23,7 +24,7 @@ class CustomCard extends StatelessWidget {
                   blurRadius: 40,
                   color: Colors.grey.withOpacity(.2),
                   spreadRadius: 20,
-                  offset: Offset(10, 10),
+                  offset: const Offset(10, 10),
                 ),
               ],
             ),
@@ -38,9 +39,9 @@ class CustomCard extends StatelessWidget {
                     children: [
                       Text(
                         product.title.substring(0, 15),
-                        style: TextStyle(color: Colors.grey, fontSize: 16),
+                        style: const TextStyle(color: Colors.grey, fontSize: 16),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 3,
                       ),
                       Row(
@@ -48,9 +49,9 @@ class CustomCard extends StatelessWidget {
                         children: [
                           Text(
                             r'$' '${product.price.toString()}',
-                            style: TextStyle(fontSize: 16, color: Colors.black),
+                            style: const TextStyle(fontSize: 16, color: Colors.black),
                           ),
-                          Icon(
+                          const Icon(
                             Icons.favorite,
                             color: Colors.red,
                           ),

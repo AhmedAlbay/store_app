@@ -1,9 +1,12 @@
+// ignore_for_file: avoid_print, duplicate_ignore
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class Api {
+  // ignore: non_constant_identifier_names
   Future<dynamic> get({required String url, @required String? Token}) async {
     http.Response response = await http.get(Uri.parse(url));
     Map<String, String> headers = {};
@@ -18,20 +21,23 @@ class Api {
   }
 
   Future<dynamic> post(
+      // ignore: non_constant_identifier_names
       {required url, @required dynamic body, @required String? Token}) async {
     Map<String, String> headers = {};
     if (Token != null) {
       headers.addAll({'Authorization': 'Bearer $Token'});
     }
-
+    print('url = $url body = $body token = $Token ');
     http.Response response = await http.post(
       Uri.parse(url),
       body: body,
       headers: headers,
     );
+    // ignore: duplicate_ignore
     if (response.statusCode == 200) {
       Map<String, dynamic> data = jsonDecode(response.body);
-
+      // ignore: avoid_print
+      print(data);
       return data;
     } else {
       throw Exception(
@@ -49,6 +55,7 @@ class Api {
       headers.addAll({'Authorization': 'Bearer $token'});
     }
 
+    // ignore: avoid_print
     print('url = $url body = $body token = $token ');
     http.Response response =
         await http.put(Uri.parse(url), body: body, headers: headers);

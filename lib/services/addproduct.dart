@@ -1,8 +1,9 @@
 import 'package:store_app/helper/api.dart';
 import 'package:store_app/models/products.dart';
-import 'dart:convert';
+
 
 class AddProduct {
+  // ignore: non_constant_identifier_names
   Future<ProductsModels> AddProducts(
       {required String title,
       required String price,
@@ -16,7 +17,7 @@ class AddProduct {
       'description': description,
       'image': image,
       'category': category
-    });
+    }, Token: '');
     return ProductsModels.fromJson(data);
   }
 }

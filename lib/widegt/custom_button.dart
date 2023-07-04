@@ -13,7 +13,7 @@ class button extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
-          color: Colors.blue,
+          color: Colors.grey,
         ),
         width: double.infinity,
         height: 60,
